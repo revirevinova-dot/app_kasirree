@@ -32,7 +32,8 @@ if (!isset($data->username) || !isset($data->password)) {
 
 try {
     // Cari user di database berdasarkan username
-    $stmt = $pdo->prepare("SELECT UserID, Username, Password, NamaLengkap, Role FROM kasir_user WHERE Username = ?");
+    // --- PERUBAHAN 1: Kolom 'Role' dihapus dari query SELECT ---
+    $stmt = $pdo->prepare("SELECT UserID, Username, Password, NamaLengkap FROM kasir_user WHERE Username = ?");
     $stmt->execute([$username]);
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -42,7 +43,9 @@ try {
         $_SESSION['user_id'] = $user['UserID'];
         $_SESSION['username'] = $user['Username'];
         $_SESSION['nama_lengkap'] = $user['NamaLengkap'];
-        $_SESSION['role'] = $user['Role'];
+        
+        // --- PERUBAHAN 2: Baris penyimpanan role ke session dihapus ---
+        // $_SESSION['role'] = $user['Role'];
 
         echo json_encode(['success' => true, 'message' => 'Login berhasil.']);
     } else {
