@@ -1,0 +1,146 @@
+/* ===================================================
+   VARIABEL TEMA HIJAU SOFT (CUSTOM SOFT GREEN THEME)
+   =================================================== */
+:root {
+    --bs-primary: #2E7D32;       /* Hijau Soft Utama */
+    --bs-primary-hover: #388E3C;  /* Hijau Sedikit Lebih Tua untuk Hover */
+    --bs-primary-light: #E8F5E9;  /* Hijau Sangat Muda untuk Background */
+    --bs-secondary: #6c757d;
+    --bs-success: #28a745;
+    --bs-info: #17a2b8;
+    --bs-warning: #ffc107;
+    --bs-danger: #dc3545;
+    --bs-light: #f8f9fa;
+    --bs-dark: #343a40;
+}
+
+/* ===================================================
+   OVERRIDE BOOTSTRAP DENGAN TEMA HIJAU
+   =================================================== */
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+.btn-primary:hover, .btn-primary:focus {
+    background-color: var(--bs-primary-hover);
+    border-color: var(--bs-primary-hover);
+}
+.navbar-dark {
+    background-color: var(--bs-primary) !important;
+}
+.card-header {
+    background-color: var(--bs-primary-light);
+    border-bottom: 1px solid #c3e6cb;
+}
+
+/* ===================================================
+   GAYA GLOBAL & PENINGKATAN ELEMEN
+   =================================================== */
+body {
+    background-color: #f4f7f6; /* Latar belakang abu-abu-hijau yang lembut */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Gaya untuk Card secara umum */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+}
+
+/* Gaya untuk Tabel */
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+.table thead th {
+    background-color: var(--bs-primary-light);
+    border-color: #c3e6cb;
+    font-weight: 600;
+}
+.table-hover tbody tr:hover {
+    background-color: #f1f8e9;
+}
+
+/* Gaya untuk Form Input */
+.form-control:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+.form-select:focus {
+    border-color: var(--bs-primary);
+    box-shadow: 0 0 0 0.2rem rgba(46, 125, 50, 0.25);
+}
+
+/* Gaya untuk Kotak Notifikasi */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1050;
+    display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+.notification.success { background-color: var(--bs-success); }
+.notification.error { background-color: var(--bs-danger); }
+
+/* Gaya untuk Item di Keranjang */
+.cart-item {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 10px 0;
+}
+
+
+/* ===================================================
+   GAYA KHUSUS UNTUK WIDGET DASHBOARD
+   =================================================== */
+.small-box {
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.small-box > .inner {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.small-box h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0;
+    z-index: 1;
+}
+.small-box p {
+    font-size: 1rem;
+    margin: 0;
+    z-index: 1;
+}
+.small-box .icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+/* Warna latar belakang gradien untuk setiap widget */
+.small-box.bg-green { background: linear-gradient(135deg, #2E7D32, #43a047); color: white; }
+.small-box.bg-blue { background: linear-gradient(135deg, #1976D2, #2196F3); color: white; }
+.small-box.bg-teal { background: linear-gradient(135deg, #00796B, #009688); color: white; }
+.small-box.bg-orange { background: linear-gradient(135deg, #F57C00, #FF9800); color: white; }
